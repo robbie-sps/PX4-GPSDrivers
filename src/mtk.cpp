@@ -74,31 +74,31 @@ GPSDriverMTK::configure(unsigned &baudrate, const GPSConfig &config)
 	baudrate = MTK_BAUDRATE;
 
 	/* Write config messages, don't wait for an answer */
-	if ((sizeof(MTK_OUTPUT_5HZ) - 1) != write(MTK_OUTPUT_5HZ, sizeof(MTK_OUTPUT_5HZ) - 1)) {
+	if ((ARRAY_SIZE(MTK_OUTPUT_5HZ) - 1) != write(MTK_OUTPUT_5HZ, ARRAY_SIZE(MTK_OUTPUT_5HZ) - 1)) {
 		goto errout;
 	}
 
 	gps_usleep(10000);
 
-	if ((sizeof(MTK_SET_BINARY) - 1) != write(MTK_SET_BINARY, sizeof(MTK_SET_BINARY) - 1)) {
+	if ((ARRAY_SIZE(MTK_SET_BINARY) - 1) != write(MTK_SET_BINARY, ARRAY_SIZE(MTK_SET_BINARY) - 1)) {
 		goto errout;
 	}
 
 	gps_usleep(10000);
 
-	if ((sizeof(MTK_SBAS_ON) - 1) != write(MTK_SBAS_ON, sizeof(MTK_SBAS_ON) - 1)) {
+	if ((ARRAY_SIZE(MTK_SBAS_ON) - 1) != write(MTK_SBAS_ON, ARRAY_SIZE(MTK_SBAS_ON) - 1)) {
 		goto errout;
 	}
 
 	gps_usleep(10000);
 
-	if ((sizeof(MTK_WAAS_ON) - 1) != write(MTK_WAAS_ON, sizeof(MTK_WAAS_ON) - 1)) {
+	if ((ARRAY_SIZE(MTK_WAAS_ON) - 1) != write(MTK_WAAS_ON, ARRAY_SIZE(MTK_WAAS_ON) - 1)) {
 		goto errout;
 	}
 
 	gps_usleep(10000);
 
-	if ((sizeof(MTK_NAVTHRES_OFF) - 1) != write(MTK_NAVTHRES_OFF, sizeof(MTK_NAVTHRES_OFF) - 1)) {
+	if ((ARRAY_SIZE(MTK_NAVTHRES_OFF) - 1) != write(MTK_NAVTHRES_OFF, ARRAY_SIZE(MTK_NAVTHRES_OFF) - 1)) {
 		goto errout;
 	}
 
